@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Free UK car running cost calculator. Estimate fuel, insurance, road tax, servicing and other motoring costs per month, year and mile.">
+<title>Free UK Car Running Cost Calculator | Goldcrest Guides</title>
+<style>
+:root{--navy:#14243a;--gold:#d6b56d;--cream:#f7f4ed;--ink:#243244;--muted:#637083;--line:#dce2e8;--white:#fff;--green:#1d6a52}
+*{box-sizing:border-box}body{margin:0;background:#f3f5f7;color:var(--ink);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}header{background:var(--navy);color:white;padding:30px 18px 34px;border-bottom:5px solid var(--gold)}.wrap{max-width:1050px;margin:0 auto}.brand{font-size:.82rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);font-weight:750}h1{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.1;margin:12px 0}header p{max-width:680px;margin:0;color:#e4eaf1}.tag{display:inline-block;margin-top:18px;border:1px solid #718096;border-radius:999px;padding:5px 11px;font-size:.85rem;color:#f5e8c9}.layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:22px;padding:24px 18px 40px}.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 8px 25px #14243a0a}.panel h2{margin:0 0 6px;color:var(--navy);font-size:1.25rem}.intro{margin:0 0 18px;color:var(--muted);font-size:.93rem}.fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}label{font-weight:650;font-size:.9rem}input,select{font:inherit;width:100%;padding:11px 12px;border:1px solid #b9c4d0;border-radius:9px;background:#fff;color:var(--ink)}input:focus,select:focus{outline:3px solid #d6b56d66;border-color:#a78131}.hint{font-size:.78rem;color:var(--muted)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}button{border:0;border-radius:9px;padding:12px 16px;font:inherit;font-weight:750;cursor:pointer}.primary{background:var(--gold);color:var(--navy)}.secondary{background:#edf0f4;color:var(--navy)}button:hover{filter:brightness(.97)}.results{position:sticky;top:18px;align-self:start}.result-hero{background:var(--navy);color:white;border-radius:12px;padding:20px;margin:15px 0}.result-hero small{color:#dbe4ef}.big{font-size:2.3rem;font-weight:800;letter-spacing:-.03em;margin:3px 0;color:#f0d99e}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}.metric{background:#f6f8fa;border:1px solid var(--line);border-radius:11px;padding:13px}.metric span{display:block;font-size:.82rem;color:var(--muted)}.metric strong{font-size:1.3rem;color:var(--navy)}.breakdown{margin-top:20px}.breakdown h3{margin:0 0 8px;color:var(--navy);font-size:1rem}.cost-row{display:flex;justify-content:space-between;gap:15px;padding:9px 0;border-bottom:1px solid #edf0f3;font-size:.92rem}.cost-row:last-child{border-bottom:0}.cost-row strong{white-space:nowrap}.note{font-size:.82rem;color:var(--muted);margin:15px 0 0}.foot{padding:0 18px 28px;text-align:center;color:var(--muted);font-size:.83rem}.foot a{color:var(--navy)}.error{color:#a32626;font-size:.85rem;margin-top:10px;display:none}
+@media(max-width:760px){.layout{grid-template-columns:1fr;padding-top:16px}.results{position:static}.fields{gap:12px}.panel{padding:17px}}@media(max-width:430px){.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.metrics{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="brand">Goldcrest Guides · Free online tool</div><h1>UK Car Running Cost Calculator</h1><p>Estimate what your car really costs to run. Add your own figures for fuel, insurance, road tax, maintenance and other expenses to see your estimated monthly, annual and per-mile costs.</p><span class="tag">Free to use · UK-focused estimates</span></div></header>
+<main class="wrap layout">
+<section class="panel" aria-labelledby="inputs-title"><h2 id="inputs-title">Your car and costs</h2><p class="intro">Enter your figures below. Typical values are provided as a starting point — replace them with your own quotes and bills.</p>
+<form id="costForm"><div class="fields">
+<div class="field"><label for="miles">Miles driven per year</label><input id="miles" type="number" min="0" step="500" value="8000" required><span class="hint">Your estimated annual mileage</span></div>
+<div class="field"><label for="mpg">Fuel economy (UK MPG)</label><input id="mpg" type="number" min="1" step="0.1" value="40" required><span class="hint">Use UK imperial MPG, not US MPG</span></div>
+<div class="field"><label for="fuelPrice">Fuel price (£ per litre)</label><input id="fuelPrice" type="number" min="0" step="0.01" value="1.50" required></div>
+<div class="field"><label for="insurance">Insurance (£ per year)</label><input id="insurance" type="number" min="0" step="1" value="650" required></div>
+<div class="field"><label for="tax">Vehicle tax / VED (£ per year)</label><input id="tax" type="number" min="0" step="1" value="190" required></div>
+<div class="field"><label for="servicing">Servicing (£ per year)</label><input id="servicing" type="number" min="0" step="1" value="250" required></div>
+<div class="field"><label for="repairs">Repairs and tyres (£ per year)</label><input id="repairs" type="number" min="0" step="1" value="300" required></div>
+<div class="field"><label for="mot">MOT (£ per year)</label><input id="mot" type="number" min="0" step="1" value="55" required></div>
+<div class="field"><label for="parking">Parking and permits (£ per year)</label><input id="parking" type="number" min="0" step="1" value="120" required></div>
+<div class="field"><label for="other">Other costs (£ per year)</label><input id="other" type="number" min="0" step="1" value="0" required><span class="hint">Breakdown cover, cleaning, etc.</span></div>
+<div class="field full"><label for="finance">Monthly finance payment (£, optional)</label><input id="finance" type="number" min="0" step="1" value="0"><span class="hint">Include this if you want the calculator to show your monthly cash outlay including finance. Finance is not included in the cost-per-mile running-cost figure below.</span></div>
+</div><div class="actions"><button class="primary" type="submit">Calculate my costs</button><button class="secondary" type="reset" id="resetBtn">Reset example figures</button></div><p class="error" id="error" role="alert">Please enter valid, non-negative figures. Fuel economy and annual mileage must be greater than zero.</p></form></section>
+<aside class="panel results" aria-live="polite" aria-labelledby="results-title"><h2 id="results-title">Your estimated costs</h2><p class="intro">Based on the figures you've entered.</p><div class="result-hero"><small>Estimated running cost per month</small><div class="big" id="monthly">£0.00</div><small id="annualLabel">£0.00 per year · excluding finance</small></div><div class="metrics"><div class="metric"><span>Running cost per year</span><strong id="annual">£0.00</strong></div><div class="metric"><span>Running cost per mile</span><strong id="perMile">£0.00</strong></div><div class="metric"><span>Fuel cost per year</span><strong id="fuelAnnual">£0.00</strong></div><div class="metric"><span>Monthly incl. finance</span><strong id="monthlyWithFinance">£0.00</strong></div></div><div class="breakdown"><h3>Annual cost breakdown</h3><div id="breakdownRows"></div></div><p class="note">Estimates only. Actual costs vary with your vehicle, driving, fuel prices, insurance, tax class and location. Check current official rates and supplier quotes. This tool is for general budgeting, not financial advice.</p></aside>
+</main><footer class="wrap foot">A free practical tool from <strong>Goldcrest Guides</strong>. <span>Check all estimates against your actual bills and current UK rates.</span></footer>
+<script>
+(() => {
+ const $ = id => document.getElementById(id);
+ const fields = ['miles','mpg','fuelPrice','insurance','tax','servicing','repairs','mot','parking','other','finance'];
+ const money = n => new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP'}).format(n);
+ function calculate(){
+  const v={}; for(const id of fields){v[id]=Number($(id).value);if(!Number.isFinite(v[id])||v[id]<0){$('error').style.display='block';return;}}
+  if(v.miles<=0||v.mpg<=0){$('error').style.display='block';return;}$('error').style.display='none';
+  // UK MPG uses imperial gallons (4.54609 litres per gallon).
+  const fuel = (v.miles / v.mpg) * 4.54609 * v.fuelPrice;
+  const items=[['Fuel',fuel],['Insurance',v.insurance],['Vehicle tax / VED',v.tax],['Servicing',v.servicing],['Repairs and tyres',v.repairs],['MOT',v.mot],['Parking and permits',v.parking],['Other costs',v.other]];
+  const annual=items.reduce((sum,item)=>sum+item[1],0), monthly=annual/12, perMile=annual/v.miles;
+  $('monthly').textContent=money(monthly);$('annualLabel').textContent=money(annual)+' per year · excluding finance';$('annual').textContent=money(annual);$('perMile').textContent=money(perMile);$('fuelAnnual').textContent=money(fuel);$('monthlyWithFinance').textContent=money(monthly+v.finance);
+  $('breakdownRows').innerHTML=items.map(([name,cost])=>`<div class="cost-row"><span>${name}</span><strong>${money(cost)}</strong></div>`).join('')+`<div class="cost-row"><span><strong>Total running costs</strong></span><strong>${money(annual)}</strong></div>`;
+ }
+ $('costForm').addEventListener('submit',e=>{e.preventDefault();calculate();});
+ $('costForm').addEventListener('input',()=>{if($('error').style.display==='block')return;calculate();});
+ $('costForm').addEventListener('reset',()=>setTimeout(calculate,0));
+ calculate();
+})();
+</script>
+</body></html>
